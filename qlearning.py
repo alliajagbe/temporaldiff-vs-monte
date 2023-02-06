@@ -29,7 +29,7 @@ for episode in range(n_episodes):
             next_state_probs = next_state_probs / prob_sum
         next_state = np.random.choice(n_states, p=next_state_probs)
         reward = R[state, action, next_state]
-        Q[state, action] = (1 - alpha) * Q[state, action] + alpha * (reward + gamma * np.max(Q[next_state, :]))
+        Q[state, action] = Q[state, action] + alpha * (reward + gamma * np.max(Q[next_state, :]) - Q[next_state, action])
         state = next_state
 
 # Use the learned Q-table to make decisions
