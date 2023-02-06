@@ -11,7 +11,7 @@ terminal_states = [0, n_states - 1]
 n_episodes = 1000
 alpha = 0.1
 gamma = 0.99
-epsilon = 0.01
+epsilon = 0.1
 Q = np.zeros((n_states, n_actions))
 
 for episode in range(n_episodes):
