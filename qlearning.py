@@ -63,6 +63,15 @@ for episode in range(n_episodes):
 
         state = next_state
 
+
+
+
+
+
+
+
+
+
 # now, we use the Q-table generated to make decisions
 non_terminal_states = [i for i in range(n_states) if i not in terminal_states]
 state = np.random.choice(non_terminal_states)
@@ -86,8 +95,9 @@ while state not in terminal_states:
 
 # import matplotlib.pyplot as plt
 
-# plt.imshow(Q, cmap='hot', interpolation='nearest')
+# plt.imshow(Q, cmap='Blues', interpolation='nearest')
 # plt.xlabel('Action')
+# plt.xticks([0,1,2,3])
 # plt.ylabel('State')
 # plt.title('Q-table for the States and Respective Actions')
 # plt.show()
