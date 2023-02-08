@@ -85,8 +85,17 @@ while state not in terminal_states:
         next_state_probs = next_state_probs / prob_sum
     next_state = np.random.choice(states, p=next_state_probs)
 
+    if action == 0:
+        action = "Up"
+    elif action == 1:
+        action = "Down"
+    elif action == 2:
+        action = "Right"
+    else:
+        action = "Left"
+
     print(f"From your current state {state},")
-    print(f"Take action {action} to go to the next state {next_state}.")
+    print(f"Go {action} to go to the next state {next_state}.")
     print("\nYou're welcome :)\n")
     state = next_state
 
