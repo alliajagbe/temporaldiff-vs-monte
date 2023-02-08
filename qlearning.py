@@ -73,17 +73,17 @@ for episode in range(episodes):
 
 
 # now, we use the Q-table generated to make decisions
-non_terminal_states = [i for i in range(n_states) if i not in terminal_states]
+non_terminal_states = [i for i in range(states) if i not in terminal_states]
 state = np.random.choice(non_terminal_states)
 while state not in terminal_states:
     action = np.argmax(Q[state, :])
     next_state_probs = P[state, action, :]
     prob_sum = np.sum(next_state_probs)
     if prob_sum == 0:
-        next_state_probs = np.ones(n_states) / n_states
+        next_state_probs = np.ones(states) / states
     else:
         next_state_probs = next_state_probs / prob_sum
-    next_state = np.random.choice(n_states, p=next_state_probs)
+    next_state = np.random.choice(states, p=next_state_probs)
 
     print(f"From your current state {state},")
     print(f"Take action {action} to go to the next state {next_state}.")
