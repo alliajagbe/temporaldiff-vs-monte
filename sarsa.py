@@ -80,7 +80,7 @@ for episode in range(episodes):
 # In[121]:
 
 
-get_ipython().run_line_magic('matplotlib', '')
+#get_ipython().run_line_magic('matplotlib', '')
 sns.heatmap(Q, annot=True, cmap='hot')
 plt.show()
 
