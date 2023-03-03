@@ -92,5 +92,5 @@ def qlearning_cliffwalk(alpha, gamma, epsilon, num_episodes):
 q_sarsa = sarsa_cliffwalk(0.5, 1, 0.1, 500)
 q_qlearning = qlearning_cliffwalk(0.5, 1, 0.1, 500)
 
-plt.imshow(q_sarsa , cmap = 'autumn' , interpolation = 'nearest' )
-plt.show()
+# plt.imshow(q_sarsa , cmap = 'autumn' , interpolation = 'nearest' )
+# plt.show()
