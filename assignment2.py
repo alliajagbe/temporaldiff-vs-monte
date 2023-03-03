@@ -64,6 +64,7 @@ def qlearning_cliffwalk(alpha, gamma, epsilon, num_episodes):
                 action = np.random.randint(0,4)
             else:
                 action = np.argmax(Q[state[0],state[1],:])
+                print(action)
             # take action A, observe R, S'
             next_state = state[:]
             if action == 0:
@@ -92,5 +93,5 @@ def qlearning_cliffwalk(alpha, gamma, epsilon, num_episodes):
 q_sarsa = sarsa_cliffwalk(0.5, 1, 0.1, 500)
 q_qlearning = qlearning_cliffwalk(0.5, 1, 0.1, 500)
 
-# plt.imshow(q_sarsa , cmap = 'autumn' , interpolation = 'nearest' )
-# plt.show()
+plt.imshow(q_qlearning, cmap = 'autumn' , interpolation = 'nearest' )
+plt.show()
