@@ -87,3 +87,7 @@ def qlearning_cliffwalk(alpha, gamma, epsilon, num_episodes):
             # S <- S'
             state = next_state[:]
     return Q
+
+
+q_sarsa = sarsa_cliffwalk(0.5, 1, 0.1, 500)
+q_qlearning = qlearning_cliffwalk(0.5, 1, 0.1, 500)
