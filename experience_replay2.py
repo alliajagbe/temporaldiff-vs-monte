@@ -48,7 +48,11 @@ def main():
         q_table = experience_replay(memory, batch_size, alpha, gamma, q_table)
     
     # Print the final Q-table
-    print(q_table)
+    print("Final Q-table:")
+    for i,row in enumerate(q_table):
+        print("State {}: {}".format(i, row))
 
 if __name__ == '__main__':
     main()
+
+# %%
