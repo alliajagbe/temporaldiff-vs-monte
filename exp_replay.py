@@ -1,6 +1,10 @@
+#%%
+
 import gym
 import numpy as np
 from collections import deque
+
+#%%
 
 # Initialize the environment
 env = gym.make('CartPole-v1')
@@ -19,6 +23,8 @@ epsilon_decay = 0.995
 min_epsilon = 0.01
 batch_size = 32
 episodes = 1000
+
+#%%
 
 # Define the epsilon-greedy policy
 def epsilon_greedy_policy(state):
