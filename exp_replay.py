@@ -32,6 +32,8 @@ def epsilon_greedy_policy(state):
         return env.action_space.sample()
     else:
         return np.argmax(q_table[state])
+    
+#%%
 
 # Loop over episodes
 for episode in range(episodes):
@@ -44,7 +46,7 @@ for episode in range(episodes):
         action = epsilon_greedy_policy(state)
         
         # Take the action and observe the reward and the next state
-        next_state, reward, done, _ = env.step(action)
+        next_state, reward, done, info1, info2 = env.step(action)
         
         # Store the experience in the replay buffer
         replay_buffer.append((state, action, reward, next_state, done))
@@ -71,3 +73,4 @@ for episode in range(episodes):
     
     # Print the total reward for the episode
     print("Episode: {}, total reward: {}".format(episode, total_reward))
+# %%
