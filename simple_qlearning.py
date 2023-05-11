@@ -22,7 +22,7 @@ def main():
     gamma = 0.9
     
     # Train the Q-learning agent
-    for i in range(100):
+    for i in range(500):
         # Select a random initial state
         state = random.randint(0, 2)
         done = False
